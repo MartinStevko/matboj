@@ -14,7 +14,7 @@ First of all, download ZIPped `matboj` project from GitHub using big green butto
 ## Python installation
 
 ### Windows machine
-Install Python from https://www.python.org/downloads/ and then in CMD type:
+Install Python from https://www.python.org/downloads/.
 
 ### Linux machine
 In Bash type:
@@ -35,7 +35,7 @@ In CMD type:
 py -m pip install virtualenv
 ```
 
-Create virtual enviroment
+Create virtual enviroment:
 ```cmd
 py -m venv ENV_NAME
 ```
@@ -52,11 +52,12 @@ In Bash type:
 python3 -m pip install virtualenv
 ```
 
-Create virtual enviroment
+Create virtual enviroment:
 ```cmd
 virtualenv -p python3 ENV_NAME
 ```
-and allow remote acces for desired port:
+
+Allow remote acces for desired port:
 ```bash
 iptables -I INPUT -p tcp -m tcp --dport PORT_NUMBER -j ACCEPT
 ```
