@@ -92,11 +92,15 @@ Afterwards make and then apply migrations. You can do it by typing:
 
 - for Windows in CMD:
     ```
-    python manage.py makemigrations diary
+    py manage.py makemigrations diary
     ```
     ```
-    python manage.py migrate
+    py manage.py migrate
     ```
+    ```
+    py manage.py createsuperuser
+    ```
+    and type your own credentials for project administration.
 
 - or for Linux in Bash:
     ```
@@ -105,6 +109,10 @@ Afterwards make and then apply migrations. You can do it by typing:
     ```
     python manage.py migrate
     ```
+    ```
+    python manage.py createsuperuser
+    ```
+    and type your own credentials for project administration.
 
 
 ## Run server
