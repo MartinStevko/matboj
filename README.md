@@ -85,36 +85,6 @@ python3 -m pip install Django==2.1
 ```
 
 
-## Base database creation
-
-First go to `matboj-master` directory. 
-Afterwards make and then apply migrations. You can do it by typing:
-
-- for Windows in CMD:
-    ```
-    py manage.py makemigrations diary
-    ```
-    ```
-    py manage.py migrate
-    ```
-    ```
-    py manage.py createsuperuser
-    ```
-    and type your own credentials for project administration.
-
-- or for Linux in Bash:
-    ```
-    python manage.py makemigrations diary
-    ```
-    ```
-    python manage.py migrate
-    ```
-    ```
-    python manage.py createsuperuser
-    ```
-    and type your own credentials for project administration.
-
-
 ## Run server
 
 ### Windows machine
@@ -150,3 +120,7 @@ python manage.py runserver 0.0.0.0:PORT_NUMBER
 ## Application access
 
 After all that you can access to admin site by typing `localhost:PORT_NUMBER/admin/` and to app by typing `localhost:PORT_NUMBER/matboje/` (`localhost` can be substituted by an IP address of server e.g. `192.168.1.47`).
+
+Credentials for administrations:
+ - username: `admin`
+ - password: `admin`
