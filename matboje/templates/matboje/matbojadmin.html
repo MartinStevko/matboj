@@ -1,3 +1,7 @@
-<h1> {{ matboj.name }} - administrácia </h1>
+{% extends 'matboje/base.html' %}
 
+{% block title %}{{ matboj.name }} - administrácia{% endblock %}
 
+{% block content %}
+    <h1> {{ matboj.name }} - administrácia </h1>
+{% endblock %}

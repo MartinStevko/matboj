@@ -1,28 +1,35 @@
-<!-- Auto refresh results -->
-<meta http-equiv="refresh" content="2">
+{% extends 'matboje/base.html' %}
 
-<h1 style="margin-bottom: 0px;"> {{ matboj.name }} </h1>
+{% block title %}{{ matboj.name }} - výsledky{% endblock %}
 
-<div>
-	<ol style="list-style-type: ol; display: inline-block;">
-	{% for competitor in competitors_list1 %}
-	    <li> {{competitor}} : {{competitor.ranking}}</li>    
-	{% endfor %} 
-	</ol>
+{% block meta %}
+	<!-- Auto refresh results -->
+	<meta http-equiv="refresh" content="2">
+{% endblock %}
 
-	<ol start="26" style="list-style-type: ol ; display: inline-block; vertical-align: top;">
-	{% for competitor in competitors_list2 %}
-	    <li> {{competitor}} : {{competitor.ranking}}</li>    
-	{% endfor %}
-	</ol>
-	
-	{% if list_druziny %}  
+{% block content %}
+	<h1 style="margin-bottom: 0px;"> {{ matboj.name }} </h1>
+
+	<div>
 		<ol style="list-style-type: ol; display: inline-block;">
-		<h3> Poradie družín podľa priemerného skóre </h3>
-		{% for item in druziny %}
-			<li> {{ item.druzina }} : {{ item.score_str }} </li>
+		{% for competitor in competitors_list1 %}
+			<li> {{competitor}} : {{competitor.ranking}}</li>    
+		{% endfor %} 
+		</ol>
+
+		<ol start="26" style="list-style-type: ol ; display: inline-block; vertical-align: top;">
+		{% for competitor in competitors_list2 %}
+			<li> {{competitor}} : {{competitor.ranking}}</li>    
 		{% endfor %}
 		</ol>
-	{% endif %}
-</div>
-	
+		
+		{% if list_druziny %}  
+			<ol style="list-style-type: ol; display: inline-block;">
+			<h3> Poradie družín podľa priemerného skóre </h3>
+			{% for item in druziny %}
+				<li> {{ item.druzina }} : {{ item.score_str }} </li>
+			{% endfor %}
+			</ol>
+		{% endif %}
+	</div>
+{% endblock %}

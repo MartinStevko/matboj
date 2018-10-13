@@ -10,7 +10,7 @@ class Druzina(models.Model):
 
 class Competitor(models.Model):
     name = models.CharField(max_length=100, unique=True, null=False)
-    druzina = models.ForeignKey(Druzina)
+    druzina = models.ForeignKey(Druzina, on_delete=models.PROTECT)
 
     def name_reversed(self):
         return " ".join(self.name.split(" ")[::-1])

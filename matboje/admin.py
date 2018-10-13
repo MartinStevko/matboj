@@ -7,13 +7,11 @@ class CompetitorsInline(admin.TabularInline):
     extra = 6
     
 class MatbojAdmin(admin.ModelAdmin):
-    
-    fields = ['name','date']
+    fields = ['name', 'date']
     inlines = [CompetitorsInline]
-    list_display = ['name','competitors_count','date']
+    list_display = ['name', 'competitors_count', 'date']
     
     def competitors_count(self, inst):
     	return len(MatbojCompetitors.objects.filter(matboj=inst))
 
-admin.site.register(Matboj,MatbojAdmin)
-
+admin.site.register(Matboj, MatbojAdmin)

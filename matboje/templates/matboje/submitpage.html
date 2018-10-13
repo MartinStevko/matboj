@@ -1,24 +1,29 @@
-<h1> {{ matboj.name }} </h1>
+{% extends 'matboje/base.html' %}
 
-<div style="margin: auto; width: 400px;">
-	<form action="SubmitMatch/" method="post">
-		{% csrf_token %}
-		<table>
-			<tr>
-				{% for field in form %}
-					<td>{{ field.label_tag }}</td>
-				{% endfor %}
-			</tr><tr>
-				{% for field in form %}
-					<td>{{ field }}</td>
-				{% endfor %}
-			</tr>
-			<tr><td colspan="2">
-				<input type="submit" value="Submit" style="padding: 10px; float: right;" />
-			</td></tr>
-		</table>
-	</form>
-</div>
+{% block title %}{{ matboj.name }} - odovzdávač{% endblock %}
 
-<br>
+{% block content %}
+	<h1> {{ matboj.name }} </h1>
 
+	<div style="margin: auto; width: 400px;">
+		<form action="SubmitMatch/" method="post">
+			{% csrf_token %}
+			<table>
+				<tr>
+					{% for field in form %}
+						<td>{{ field.label_tag }}</td>
+					{% endfor %}
+				</tr><tr>
+					{% for field in form %}
+						<td>{{ field }}</td>
+					{% endfor %}
+				</tr>
+				<tr><td colspan="2">
+					<input type="submit" value="Submit" style="padding: 10px; float: right;" />
+				</td></tr>
+			</table>
+		</form>
+	</div>
+
+	<br>
+{% endblock %}

@@ -1,10 +1,15 @@
-{% load url from future %}
-{% if matboje_list %}
-    <ul>
-    {% for matboj in matboje_list %}
-        <li><a href="{% url 'matboje:detail' pk=matboj.id %}">{{ matboj.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No matbojs are available.</p>
-{% endif %}
+{% extends 'matboje/base.html' %}
+
+{% block title %}Matboje{% endblock %}
+
+{% block content %}
+    {% if matboje_list %}
+        <ul>
+        {% for matboj in matboje_list %}
+            <li><a href="{% url 'matboje:detail' pk=matboj.id %}">{{ matboj.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No matbojs are available.</p>
+    {% endif %}
+{% endblock %}
